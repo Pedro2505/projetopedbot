@@ -22,14 +22,15 @@ export function NavLinks() {
             {routes.map((link) => {
                 return (
                     <button 
-                        onClick={() => handleNavigation(link.href)} key={link.href}
+                        key={link.href}
+                        onClick={() => handleNavigation(link.href)}
                         className={`text-left px-3 py-2 rounded-md hover:bg-teal-100 transition-colors 
                             ${pathname === link.href ? 'bg-teal-200 font-semibold' : ''} 
                             ${isPending && loadingRoute === link.href ? 'opacity-50 cursor-not-allowed' : ''}`
                         } 
                         disabled={isPending && loadingRoute === link.href}
                     >
-                    {link.label}
+                        {link.label}
                     </button>
                 )
             })}
